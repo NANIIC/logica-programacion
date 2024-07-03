@@ -25,6 +25,11 @@ while (numeroUsuario != numeroSecreto) {
         }
         intentos = intentos + 1;
         palabaVeces = 'veces';
+        if (intentos > 3){
+            alert ('Llegaste al número máximo de intentos :C');
+           //ponemos el break para que corte con el while
+            break;
+        }
     // alert('Lo siento, no acertaste el numero');
     //no acerto la condicion
     }
