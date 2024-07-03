@@ -1,13 +1,13 @@
 //Variables
-let numeroSecreto = 6;
+let numeroSecreto = Math.floor(Math.random()*10)+1;
 let numeroUsuario = 0;
 let intentos = 1;
-let palabaVeces = 'vez';
+//let palabaVeces = 'vez';
 let maximosIntentos = 3;
 
 while (numeroUsuario != numeroSecreto) {
 
-     numeroUsuario = prompt("Me indicas un número entre 1 y 10 por favor: ");
+     numeroUsuario = parseInt(prompt("Me indicas un número entre 1 y 10 por favor: "));
 
     console.log(numeroUsuario);
     /*
@@ -15,6 +15,7 @@ while (numeroUsuario != numeroSecreto) {
     la comparación
     */
     if (numeroUsuario == numeroSecreto) {
+        //usamos operador ternario en la parte de intento para ver si se pone vez o veces y funciona como if == y else:
         alert (`Acertaste, el número es: ${numeroUsuario}. Lo hiciste en  ${intentos} ${intentos == 1 ? 'vez' : 'veces' } `);
         //alert('El numero secreto es: '+numeroSecreto);
         //acerto la condicion
@@ -24,6 +25,7 @@ while (numeroUsuario != numeroSecreto) {
         } else {
             alert ('El número secreto es mayor');
         }
+        //incrementamos el contador cuando no acierta
         intentos = intentos + 1;
         palabaVeces = 'veces';
         if (intentos > maximosIntentos){
