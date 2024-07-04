@@ -1,17 +1,18 @@
+let numeroSecreto = generarNumeroSecreto();
+console.log(numeroSecreto);
 
-
-//declaramos la funcion que pusimos para la parte de index donde esta lo de click que le pusimos
-//onclick="intentoDeUsuario();"  todo eso dentro de un buton
-  
-//automatizamos la asignación de texto  
 function asignarTextoElento(elemento, texto){
     let elementoHTML = document.querySelector(elemento);
     elementoHTML.innerHTML =texto;
-
+return;
   }
   function intentoDeUsuario(){
      alert ('click desde el botón');
-
+    return;
     }
+  function generarNumeroSecreto(){
+    return Math.floor( Math.random()*10 )+1;
+
+  }
 asignarTextoElento('h1','Juego del número secreto!');
-asignarTextoElento('p','Indica un  número del 1 al 10!');
+asignarTextoElento('p','Indica un  número del 1 al 10');
