@@ -8,15 +8,22 @@ return;
   }
   function verificarIntento(){
         let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
-        console.log(typeof(numeroDeUsuario));  //nos retorna si es numero, string o booleano
-        console.log(numeroSecreto);
-        console.log(typeof(numeroSecreto));
-        console.log(numeroDeUsuario);
-        console.log(numeroDeUsuario === numeroSecreto) //usamos === para decir que comparamos peras con peras
+
+     
+        if (numeroDeUsuario === numeroSecreto){
+          asignarTextoElento ('p', 'Acertaste en número!');
+        }else {
+          if (numeroDeUsuario > numeroSecreto){
+            asignarTextoElento ('p','El número secreto es menor');
+          }else{
+            asignarTextoElento ('p','El número secreto es mayor');
+          }
+        }
         return;
     }
+    
   function generarNumeroSecreto(){
-    return Math.floor( Math.random()*10 )+1;
+    return Math.floor( Math.random()*10 )+1; //Generamos que el número secreto se cree sólo
 
   }
 asignarTextoElento('h1','Juego del número secreto!');
