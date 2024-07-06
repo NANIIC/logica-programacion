@@ -9,10 +9,12 @@ return;
   function verificarIntento(){
         let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
       
-        console.log(intentos);
+        
         if (numeroDeUsuario === numeroSecreto){
           asignarTextoElento ('p', `Acertaste el número en ${intentos} ${(intentos === 1) ? 'vez' : 'veces'}`);
+          document.getElementById('reiniciar').removeAttribute('disabled'); //con el removeAttribute removemos el elemento para que ande el buton
         }else {
+          //El usuario no acerto
           if (numeroDeUsuario > numeroSecreto){
             asignarTextoElento ('p','El número secreto es menor');
           }else{
@@ -22,7 +24,10 @@ return;
         }
         return;
     }
-    
+    function limpiarCaja(){
+      let valorCaja = document.querySelector('#valorUsuario');  //usamos querySelector con el id poniendolee #
+      valorCaja.value = '';
+    }
   function generarNumeroSecreto(){
     return Math.floor( Math.random()*10 )+1; //Generamos que el número secreto se cree sólo
 
