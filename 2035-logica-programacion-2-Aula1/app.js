@@ -40,8 +40,9 @@ return;
       asignarTextoElento ('p','Ya se sortearon todos los números posibles');
     }else{
     //Si el número generado está incluido en la lista
-    //includes lo que va a hacer es recorrer el arreglo y verficiar si algo ya existe y devuelve booleano
       if (listaNumerosSorteados.includes(numeroGenerado)){
+            //includes lo que va a hacer es recorrer el arreglo y verficiar si algo ya existe y devuelve booleano
+
         return generarNumeroSecreto();
 
       } else{
